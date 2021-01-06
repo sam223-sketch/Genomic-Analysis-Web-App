@@ -2,11 +2,13 @@ import streamlit as st
 from Bio.Seq import Seq
 from Bio import SeqIO
 from collections import Counter
+import gzip
 
 # Data Visualization
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use("Agg")
+
 
 
 
@@ -24,10 +26,18 @@ def main():
         st.subheader("DNA Sequence Analysis")
 
         """Upload file"""
-        seq_file = st.file_uplaoder("Upload FASTA file", type=["fasta","fa","txt"])
+        seq_file = st.file_uploader("Upload FASTA File",type=["fasta","fa"])
+
         if seq_file is not None:
-            dna_record = SeqIO.read(seq_file,"fasta","txt")
-            st.write(dna_record)
+            dna_record = SeqIO.read(seq_file,"fasta")
+            # st.write(dna_record)
+            dna_seq = dna_record.seq
+            
+            details = st.radio("Details",("Description","Sequence"))
+            if details == "Description":
+                st.write(dna_record.description)
+            elif details == "Sequence":
+                st.write(dna_record.seq)
 
     elif choice == "Information":
         st.subheader("Information")
