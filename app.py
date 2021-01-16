@@ -102,7 +102,7 @@ def main():
         st.write(reversetranscription(seq_input))
 
     elif details == "Find Complementory Strand":
-        st.text(f" DNA String + Complement + Reverse Complement: \n 5'{seq_input} 3'  \n   {''.join(['|' for c in range(len(seq_input))])} \n 3'{reverse_complement(seq_input)[::-1]} 5'[Complement]")
+        st.text(f" DNA String + Complement + Reverse Complement: \n 5'{seq_input} 3'  \n   {''.join(['|' for c in range(len(seq_input))])} \n 3'{reverse_complement(seq_input)[::-1]} 5'[Complement] \n 5'{reverse_complement(seq_input)} 3'[Reverse Complement]")
 
 
     # print(f'\n Sequence: {sampledna}')
@@ -125,12 +125,12 @@ def main():
 
 
     
-    seq_file = st.file_uploader("Upload FASTA File",type=["fasta","fa"])
+    # seq_file = st.file_uploader("Upload FASTA File",type=["fasta","fa"])
 
-    if seq_file is not None:
-        dna_record = SeqIO.read(seq_file,"fasta")
-        # st.write(dna_record)
-        dna_seq = dna_record.seq
+    # if seq_file is not None:
+    #     dna_record = SeqIO.read(seq_file,"fasta")
+    #     # st.write(dna_record)
+    #     dna_seq = dna_record.seq
 
         # details = st.radio("Details",("Description","Sequence"))
         # if details == "Description":
