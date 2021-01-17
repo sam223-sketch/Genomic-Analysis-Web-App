@@ -108,7 +108,7 @@ def main():
     elif details == "Find Complementory Strand":
         st.text(f" DNA String + Complement + Reverse Complement: \n 5'{seq_input} 3'  \n   {''.join(['|' for c in range(len(seq_input))])} \n 3'{reverse_complement(seq_input)[::-1]} 5'[Complement] \n 5'{reverse_complement(seq_input)} 3'[Reverse Complement]")
 
-    elif 
+    
 
     # print(f'\n Sequence: {sampledna}')
     # print(f'\n Sequence Lenght: {len(sampledna)} Nucleotides')
