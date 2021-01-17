@@ -1,6 +1,4 @@
 import streamlit as st
-from matplotlib.backends.backend_agg import RendererAgg
-_lock = RendererAgg.lock
 import matplotlib.pyplot as plt
 
 
