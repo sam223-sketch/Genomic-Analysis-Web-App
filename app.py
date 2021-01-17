@@ -72,8 +72,12 @@ def main():
     seq_input = st.text_input('Input Sequence')
     st.write(validateSeq(seq_input))
 
-    details = st.radio("Functions",("Sequence Length","Frequency of each Nucleotide","Transcription of DNA", 
-                        "Reverse Transcription", "Find Complementory Strand"))
+    details = st.radio("Functions",("Sequence Length",
+                        "Frequency of each Nucleotide",
+                        "Transcription of DNA", 
+                        "Reverse Transcription", 
+                        "Find Complementory Strand",
+                        "GC Content Percentage"))
     if details == "Sequence Length":
         st.write(len(seq_input))
 
@@ -104,6 +108,7 @@ def main():
     elif details == "Find Complementory Strand":
         st.text(f" DNA String + Complement + Reverse Complement: \n 5'{seq_input} 3'  \n   {''.join(['|' for c in range(len(seq_input))])} \n 3'{reverse_complement(seq_input)[::-1]} 5'[Complement] \n 5'{reverse_complement(seq_input)} 3'[Reverse Complement]")
 
+    elif 
 
     # print(f'\n Sequence: {sampledna}')
     # print(f'\n Sequence Lenght: {len(sampledna)} Nucleotides')
